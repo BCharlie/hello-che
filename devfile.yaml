@@ -1,13 +1,12 @@
-schemaVersion: 2.2.0
+schemaVersion: 2.2.2
 metadata:
   name: hello-che
 components:
   - name: tools
     container:
-      image: node:20-bookworm
-      memoryLimit: 512Mi
+      image: quay.io/devfile/base-developer-image:ubi9-latest
+      memoryLimit: 1Gi
       mountSources: true
-      sourceMapping: /projects
       endpoints:
         - name: http
           targetPort: 3000
@@ -17,7 +16,7 @@ commands:
   - id: run
     exec:
       component: tools
-      workingDir: /projects
+      workingDir: ${PROJECT_SOURCE}
       commandLine: node server.js
       group:
         kind: run
