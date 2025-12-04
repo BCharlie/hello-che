@@ -4,8 +4,9 @@ metadata:
 components:
   - name: tools
     container:
-      image: registry.access.redhat.com/ubi9/nodejs-20:latest
-      memoryLimit: 1Gi
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      memoryLimit: 4Gi
+      memoryRequest: 1Gi
       mountSources: true
       endpoints:
         - name: http
