@@ -1,13 +1,13 @@
 schemaVersion: 2.2.2
 metadata:
   name: hello-che
+  version: 1.0.0
+parent:
+  id: nodejs
+  registryUrl: https://registry.devfile.io
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
-      memoryLimit: 4Gi
-      memoryRequest: 1Gi
-      mountSources: true
       endpoints:
         - name: http
           targetPort: 3000
