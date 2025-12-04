@@ -4,8 +4,8 @@ metadata:
 components:
   - name: tools
     container:
-      image: node:20-slim
-      memoryLimit: 512Mi
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      memoryLimit: 2Gi
       mountSources: true
       sourceMapping: /projects
       endpoints:
@@ -13,10 +13,6 @@ components:
           targetPort: 3000
           exposure: public
           protocol: https
-      command:
-        - tail
-        - -f
-        - /dev/null
 commands:
   - id: run
     exec:
