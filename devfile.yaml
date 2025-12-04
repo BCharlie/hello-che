@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/base-developer-image:ubi9-latest
+      image: registry.access.redhat.com/ubi9/nodejs-24:latest
       memoryLimit: 1Gi
       mountSources: true
       endpoints:
