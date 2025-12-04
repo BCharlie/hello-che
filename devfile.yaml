@@ -4,8 +4,8 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
-      memoryLimit: 2Gi
+      image: node:20-bookworm
+      memoryLimit: 512Mi
       mountSources: true
       sourceMapping: /projects
       endpoints:
