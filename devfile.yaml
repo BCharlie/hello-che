@@ -1,0 +1,28 @@
+schemaVersion: 2.2.0
+metadata:
+  name: hello-che
+components:
+  - name: tools
+    container:
+      image: node:20-slim
+      memoryLimit: 512Mi
+      mountSources: true
+      sourceMapping: /projects
+      endpoints:
+        - name: http
+          targetPort: 3000
+          exposure: public
+          protocol: https
+      command:
+        - tail
+        - -f
+        - /dev/null
+commands:
+  - id: run
+    exec:
+      component: tools
+      workingDir: /projects
+      commandLine: node server.js
+      group:
+        kind: run
+        isDefault: true
