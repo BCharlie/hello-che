@@ -8,11 +8,14 @@ parent:
 components:
   - name: tools
     container:
+      image: quay.io/devfile/universal-developer-image:ubi9-latest
       endpoints:
         - name: http
           targetPort: 3000
           exposure: public
           protocol: https
+      memoryLimit: 1G
+      mountSources: true
 commands:
   - id: run
     exec:
