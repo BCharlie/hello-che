@@ -1,10 +1,6 @@
 schemaVersion: 2.2.2
 metadata:
   name: hello-che
-  version: 1.0.0
-parent:
-  id: nodejs
-  registryUrl: https://registry.devfile.io
 components:
   - name: tools
     container:
@@ -16,12 +12,3 @@ components:
           protocol: https
       memoryLimit: 1G
       mountSources: true
-commands:
-  - id: run
-    exec:
-      component: tools
-      workingDir: ${PROJECT_SOURCE}
-      commandLine: node server.js
-      group:
-        kind: run
-        isDefault: true
